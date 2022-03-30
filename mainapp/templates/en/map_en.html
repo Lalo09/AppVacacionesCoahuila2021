@@ -1,0 +1,72 @@
+{% extends 'en/layout_en.html' %}
+
+{% block titleHead %}
+<title>{{title}}</title>
+{% endblock titleHead %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block desc %}
+{{desc}}  
+{% endblock desc %}
+
+{% block content %} 
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a  onclick="getLocation()" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">directions</i>
+                    Directions
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align" id="mapa">
+                <!--Mapa-->
+                {{ m | safe }}
+                </div>
+        </div>
+    </div>
+</div>
+<form hidden method="POST" 
+
+{% if title == 'Filtros de seguridad'  %}
+action="{% url 'filtros' %}"
+{% elif title == 'Direccion de fiscalias' %}
+action="{% url 'fiscalias' %}"
+{% elif title == 'Ubicacion de gasolineras' %}
+action="{% url 'gasolineras' %}"
+{% elif title == 'Casetas de cobro' %}
+action="{% url 'casetas' %}"
+{% endif %}
+
+id="myform">
+{% csrf_token %}
+<input type="text" id="lat" name="lat"></input>
+<input type="text" id="lon" name="lon"></input>
+<input type="" value="Ver ruta" id="accept"></input>
+</form>
+<script>
+    var x = document.getElementById("lat");
+    var y = document.getElementById("lon");
+    
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+      }
+    }
+    
+    function showPosition(position) {
+      x.value = position.coords.latitude;
+      y.value = position.coords.longitude;
+      document.getElementById("myform").submit();
+    }
+    </script>
+{% endblock content %}

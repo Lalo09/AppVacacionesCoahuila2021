@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--Required meta tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!---Load static-->
+    {% load static %}
+
+    <!--CDN-->
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    
+    {% block titleHead %}
+  
+    {% endblock titleHead %}
+    
+    <title>TitleHead</title>
+
+    <style>
+        #titulo{
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        h1{
+            font-size: 200%;
+            font-weight: bold;
+        }
+        .boton{
+            height: 55px;;
+            width: 300px;;
+        }
+    </style>
+
+</head>
+<body>
+
+    <script>
+        $(document).ready(function(){
+     		$('.sidenav').sidenav();
+ 	    });
+
+         $(document).ready(function(){
+            $('.collapsible').collapsible();
+        });
+    </script>
+
+    <!--Header-->
+    <div class="col s12 blue darken-4">
+        <br>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <br>
+                <a href="index"><img class="responsive-img" src="{% static 'img/logo-policia.png' %}"></a>
+            </div>
+        </div>
+    </div>
+    <!--/Header-->
+
+    <!--Menu-->
+    <nav class="grey lighten-1" style="padding:0px 10px; ">
+        <div class="nav-wrapper">    
+            <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                <i class="material-icons">menu</i>
+            </a>
+    
+            <div class="brand-logo center ">
+                <ul class="right hide-on-med-and-down"  >
+                    <li>
+                        <a class="black-text" href="/paginas">Puntos de emergencia</a>
+                    </li>
+                    <li><a class="black-text" href="/reporte">Denuncia ciudadana</a></li>
+                    <li><a class="black-text" href="tel:911">Llamar al 911</a></li>
+                    <li><a class="black-text" href="tel:078">Llamar a Angeles Verdes</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-nav">
+	    <li><a href="/paginas">Puntos de emergencia</a></li>
+        <li><a href="/reporte">Denuncia ciudadana</a></li>
+        <li><a href="tel:911">Llamar al 911</a></li>
+        <li><a href="tel:078">Llamar a Angeles Verdes</a></li>
+    </ul>
+    <!--/Menu-->
+
+    <!--Titulo-->
+    <div class="row" id="titulo">
+        <div class="col s12">
+            <h1 class="Align center">
+                {% block title %}
+
+                {% endblock title %}
+            </h1>
+        </div>
+    </div>
+    <!--/Titulo-->
+
+    <!--Descripcion-->
+    <div class="row" id="descripcion">
+        <div class="col s12">
+            <p class="flow-text gray-text text-darken-3 center-align">
+                {% block desc %}
+    
+                {% endblock desc %}
+            </p>
+        </div>
+    </div>
+    <!--/Descripcion-->
+
+    <!--Contenido-->
+    {% block content %}
+      
+    {% endblock content %}
+    <!--/Contenido-->
+
+    <!--Footer-->
+    <footer class="grey darken-2">
+        <div class="row center-align flow-text grey-text text-lighten-2">
+            <br>
+            <p class="">Elegir idioma: </p>
+            <a href="/"><img src="{% static 'img/mexico.png' %}" /> Español</a> | <img src="{% static 'img/usa.png' %}" />  <a href="/en">Ingles</a>
+        </div>
+        <br>
+        <p class="flow-text center-align grey-text text-lighten-5">Todos los derechos reservados 2021 <i class="material-icons">copyright</i></p>
+        <br>
+    </footer>
+    <!--/Footer-->    
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block titleHead %}
+<title>{{title}}</title>
+{% endblock titleHead %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block desc %}
+{{desc}}  
+{% endblock desc %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a class="waves-effect waves-light btn-large blue darken-3 boton" href="/paginas">
+                    <i class="material-icons left">location_on</i>
+                    puntos de emergencia
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a class="waves-effect waves-light btn-large deep-orange  boton" href="/reporte"><i class="material-icons left">report</i>Denuncia ciudadana</a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a class="waves-effect waves-light btn-large red boton" href="tel:911"><i class="material-icons left">call</i> Llamar al 911 </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a class="waves-effect waves-light btn-large green boton" href="tel:078"><i class="material-icons left">call</i>Llamar a Angeles Verdes </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

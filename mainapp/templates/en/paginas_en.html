@@ -1,0 +1,58 @@
+{% extends 'en/layout_en.html' %}
+
+{% block titleHead %}
+<title>{{title}}</title>
+{% endblock titleHead %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block desc %}
+{{desc}}  
+{% endblock desc %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/en/gas-stations" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">local_gas_station</i>
+                    Gas Stations
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/en/filter" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">security</i>
+                    Security Filters
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/en/police" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">account_balance</i>
+                    Police stations
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/en/tollbooths" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">drive_eta</i>
+                    Tollbooths
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

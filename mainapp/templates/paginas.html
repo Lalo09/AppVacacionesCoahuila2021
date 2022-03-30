@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block titleHead %}
+<title>{{title}}</title>
+{% endblock titleHead %}
+
+{% block title %}
+{{title}} 
+{% endblock title %}
+
+{% block desc %}
+{{desc}}  
+{% endblock desc %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/gasolineras" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">local_gas_station</i>
+                    Gasolinera
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/filtros" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">security</i>
+                    Filtros de seguridad
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/fiscalias" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">account_balance</i>
+                    Fiscalias
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/casetas" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    <i class="material-icons left">drive_eta</i>
+                    Casetas de cobro
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

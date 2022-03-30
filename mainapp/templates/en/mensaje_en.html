@@ -1,0 +1,37 @@
+{% extends 'en/layout_en.html' %}
+
+{% block titleHead %}
+<title>{{title}}</title>
+{% endblock titleHead %}
+
+{% block title %}
+<h1 class="center-align">Incident recorded correctly</h1>
+{% endblock title %}
+ 
+{% block desc %}
+<p class="center-align" >
+    <i class="medium material-icons light-green-text text-darken-2">check_circle</i>
+</p>
+{% endblock desc %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <p class="flow-text " >Your report has been received anonymously correctly and will be followed up.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s12">
+            <div class="center-align">
+                <a href="/en" class="waves-effect waves-light btn-large blue darken-3 boton">
+                    Continuar
+                    <i class="material-icons left">arrow_forward</i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,77 @@
+{% extends 'en/layout_en.html' %}
+
+{% block titleHead %}
+<title>{{title}}</title>
+{% endblock titleHead %}
+
+{% block title %}
+{{title}}
+{% endblock title %}
+
+{% block desc %}
+{{desc}}  
+{% endblock desc %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <div>
+                <!--Formulario-->
+                <form action="{% url 'sent-report' %}" method="POST" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <div class="row ">
+                        <div class="input-field col s12">
+                            <input type="text" class="validate" id="numeroPatrulla" name="numeroPatrulla"  />
+                            <label for="numeroPatrulla">Police id Ej. 204</label>
+                        </div>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="sexoPolicia" name="customRadio">
+                          <option value="" disabled selected></option>
+                          <option value="M">Male</option>
+                          <option value="F">Female</option>
+                        </select>
+                        <label>Gender</label>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="lugarFiltro" name="lugarFiltro" type="text" class="validate" />
+                            <label for="lugarFiltro">Location</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="incidencia" name="incidencia"  class="materialize-textarea "></textarea>
+                          <label for="incidencia">Type your incident</label>
+                        </div>
+                    </div>
+                    <div class="file-field input-field">
+                        <div class="btn">
+                          <span>Subir imagen</span>
+                          <input type="file" id="inputGroupFile01" name="imagen" >
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input  class="file-path validate" type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="red-text">*All information provided will be anonymous and confidential.</p>
+                    </div>
+                    <div class="row center-align">
+                        <button class="btn-large waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems);
+    });
+</script>
+{% endblock content %}
